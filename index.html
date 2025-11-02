@@ -4,147 +4,238 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Erick Durán - Portfolio</title>
-  <link rel="icon" href="tu_foto.png" type="image/png">
-
   <style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f7f8fa;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fb;
       color: #333;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
+      color: white;
       text-align: center;
-      background: #ffffff;
-      padding: 40px 20px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 4rem 1rem 3rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: relative;
     }
 
-    header img {
+    .profile-photo {
       width: 130px;
       height: 130px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 20px;
-      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+      border: 4px solid white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin-bottom: 1rem;
     }
 
     header h1 {
-      font-size: 2em;
-      margin: 0;
-      color: #2c3e50;
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
     }
 
-    header h2 {
-      font-size: 1.1em;
-      color: #777;
-      margin-top: 5px;
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 1rem;
     }
 
-    section {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 0 20px;
+    nav {
+      margin-top: 1rem;
     }
 
-    section h3 {
-      border-bottom: 2px solid #eaeaea;
-      padding-bottom: 8px;
-      color: #2c3e50;
-      font-size: 1.3em;
-      margin-bottom: 20px;
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
-    .content {
-      background: #ffffff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      margin-bottom: 40px;
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 3rem auto;
+      display: grid;
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 2rem;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.7s ease;
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      color: #0077b6;
+      margin-bottom: 1rem;
+    }
+
+    .card img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1.2rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .skill {
+      background: #e3f2fd;
+      color: #0077b6;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      background: #0077b6;
+      color: white;
+    }
+
+    .job {
+      margin-bottom: 1.5rem;
     }
 
     footer {
       text-align: center;
-      padding: 25px;
-      font-size: 0.9em;
-      background: #ffffff;
-      color: #777;
-      border-top: 1px solid #eaeaea;
+      padding: 2rem 1rem;
+      background: #0077b6;
+      color: white;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
     }
 
-    a {
-      color: #007acc;
+    footer a {
+      color: #caf0f8;
       text-decoration: none;
+      font-weight: bold;
     }
 
-    a:hover {
+    footer a:hover {
       text-decoration: underline;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     }
   </style>
 </head>
-
 <body>
+
   <header>
-    <img src="tu_foto.png" alt="Erick Durán">
+    <!-- Foto de perfil (puedes reemplazar el link por tu_foto.png) -->
+    <img src="tu_foto.png" alt="Profile photo" class="profile-photo" />
+    
     <h1>Erick Durán</h1>
-    <h2>Technology Professional | Mainframe & Data Solutions Expert</h2>
+    <p>Technology professional with over 20 years of experience in Mainframe systems and data modernization.</p>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <section>
-    <div class="content">
-      <h3>About Me</h3>
-      <p>
-        With over 20 years of experience in IT — including 15 years in Chile and now continuing my career in the U.S. — I specialize in COBOL, IBM i (AS/400), and data-driven enterprise solutions. I combine technical expertise with agile methodologies to deliver scalable, reliable business systems.
-      </p>
-    </div>
+  <div class="container">
 
-    <div class="content">
-      <h3>Core Skills</h3>
-      <ul>
-        <li>COBOL, RPG, CL, SQL, DB2, and CICS</li>
-        <li>IBM i (AS/400) mainframe modernization</li>
-        <li>Agile and Scrum methodologies</li>
-        <li>Data analysis and enterprise integration</li>
-        <li>Java and Python (academic experience)</li>
-      </ul>
-    </div>
+    <section id="about" class="card">
+      <img src="https://images.unsplash.com/photo-1603415526960-f7e0328cf0c5?auto=format&fit=crop&w=1050&q=80" alt="Technology workspace" />
+      <h2>About Me</h2>
+      <p>I am a <strong>Mainframe environment specialist</strong> with experience in COBOL, CICS, DB2 and AS/400.  
+      I have led projects involving the migration and improvement of legacy systems to modern architectures.
+      I am currently in Utah, expanding my knowledge in <strong>Java, Python</strong> and agile methodologies.</p>
+    </section>
 
-    <div class="content">
-      <h3>Experience Highlights</h3>
-      <p>
-        • Led multiple mainframe modernization projects improving business efficiency and reliability.<br>
-        • Supported enterprise systems in financial, insurance, and retail sectors.<br>
-        • Collaborated with cross-functional teams applying Agile and DevOps principles.
-      </p>
-    </div>
+    <section id="skills" class="card">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1050&q=80" alt="Programming skills" />
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="skill">COBOL</span>
+        <span class="skill">CICS</span>
+        <span class="skill">DB2</span>
+        <span class="skill">AS/400 (RPG)</span>
+        <span class="skill">Git / Agile</span>
+        <span class="skill">Java (Basic)</span>
+        <span class="skill">Python (Basic)</span>
+        <span class="skill">Docker</span>
+        <span class="skill">Redis</span>
+      </div>
+    </section>
 
-    <div class="content">
-      <h3>Education</h3>
-      <p>
-        Bachelor’s in Computer Science (U.S. College) – expected graduation soon.<br>
-        Previous professional studies in Information Technology, Chile.
-      </p>
-    </div>
+    <section id="experience" class="card">
+      <img src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&w=1050&q=80" alt="Professional experience" />
+      <h2>Experience</h2>
+      <div class="job">
+        <strong>Senior Mainframe Developer</strong> — IBM / Chile  
+        <p>Development and maintenance of critical banking systems, batch process optimization, and CICS/DB2 support.</p>
+      </div>
+      <div class="job">
+        <strong>Systems Analyst</strong> — BancoEstado  
+        <p>Design and improvement of data management processes, coordination with international teams, and implementation of agile methodologies.</p>
+      </div>
+    </section>
 
-    <div class="content">
-      <h3>Contact</h3>
-      <p>
-        📧 <a href="mailto:erickwduranr@gmail.com">erickwduranr@gmail.com</a><br>
-        🌐 <a href="https://www.linkedin.com/in/erickwduranr" target="_blank">LinkedIn Profile</a><br>
-        📍 Utah, United States
-      </p>
-    </div>
-  </section>
+    <section id="contact" class="card">
+      <img src="https://images.unsplash.com/photo-1588702547919-26089e690ecc?auto=format&fit=crop&w=1050&q=80" alt="Contact" />
+      <h2>Contact</h2>
+      <p>📧 <a href="mailto:erickwduranr@gmail.com">erickwduranr@gmail.com</a></p>
+      <p>🔗 <a href="https://www.linkedin.com/in/erickwduranr/" target="_blank">LinkedIn</a></p>
+      <p>📍 Utah, USA</p>
+    </section>
+
+  </div>
 
   <footer>
-    © 2025 Erick Durán | All rights reserved.
+    <p>© 2025 Erick Durán | Built with ❤️ and technology</p>
   </footer>
+
+  <script>
+    // Scroll animation
+    const cards = document.querySelectorAll('.card');
+    const showOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      cards.forEach(card => {
+        const boxTop = card.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          card.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', showOnScroll);
+    showOnScroll();
+  </script>
+
 </body>
 </html>
+
